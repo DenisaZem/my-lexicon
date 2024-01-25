@@ -12,6 +12,6 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
-const MyLexicon = firebase.firestore()
+const projectFirestore = firebase.firestore()
 
-export {MyLexicon}
+export {projectFirestore}
