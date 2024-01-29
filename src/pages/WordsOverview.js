@@ -29,6 +29,10 @@ const WordsOverview = () => {
     })
   },[])
 
+  const deleteWord = (id) => {
+    projectFirestore.collection("deutsch").doc(id).delete()
+  }
+
   return (
     <div>
       Prehled Slov
@@ -42,6 +46,7 @@ const WordsOverview = () => {
           <p><strong>Německy:</strong> {wordDe}</p>
           <p><strong>Věta:</strong> {sentence}</p>
         </p>
+        <button type="button" onClick={()=>deleteWord(id)}>Smazat</button>
       </div>
     })}
     </div>
