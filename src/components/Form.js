@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { projectFirestore } from "../firebase/config"
 
 const Form = () => {
     const[wordDe, setWordDe] = useState("")
@@ -8,9 +9,9 @@ const Form = () => {
     const submitForm = (e) => {
         e.preventDefault()
 
-        console.log(wordCze)
-        console.log(wordDe)
-        console.log(sentence)
+       const newWord = {wordDe, wordCze, sentence}
+
+       projectFirestore.collection("deutsch").add(newWord)
     }
 
   return (
