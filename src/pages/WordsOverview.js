@@ -8,11 +8,12 @@ const WordsOverview = () => {
   const [data, setData] = useState([])
 
    useEffect (()=>{
-    projectFirestore.collection("deutsch").get().then((snapshot)=>{
+    const unsubscribe = projectFirestore.collection("deutsch").onSnapshot((snapshot)=>{
       console.log(snapshot)
 
       if(snapshot.empty){
         setError("Žádná slovíčka k zobrazení")
+        setData([])
       } else{
         let result = []
         snapshot.docs.forEach((oneWord)=>{
@@ -20,13 +21,13 @@ const WordsOverview = () => {
           result.push({id:oneWord.id, ...oneWord.data()})
           console.log(result)
           setData(result)
-
+          setError("")
         })
       }
+    }, (err) => {setError(err.message)} )
 
-    }).catch ((err) => {
-      setError(err.message)
-    })
+    return () => {unsubscribe ()}
+
   },[])
 
   const deleteWord = (id) => {
