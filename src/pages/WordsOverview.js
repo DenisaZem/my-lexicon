@@ -44,11 +44,11 @@ const WordsOverview = () => {
       const {id, wordDe, wordCze, sentence} = oneWord
 
       return <div key={id}>
-        <p>
+        <div>
           <p><strong>Česky:</strong> {wordCze}</p>
           <p><strong>Německy:</strong> {wordDe}</p>
           <p><strong>Věta:</strong> {sentence}</p>
-        </p>
+        </div>
         <button type="button" onClick={()=>deleteWord(id)}>Smazat</button>
       </div>
     })}
