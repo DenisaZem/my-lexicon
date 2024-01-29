@@ -1,5 +1,6 @@
 import { projectFirestore } from "../firebase/config"
 import { useState, useEffect } from "react"
+import Form from "../components/Form"
 
 
 const WordsOverview = () => {
@@ -37,6 +38,7 @@ const WordsOverview = () => {
   return (
     <div>
       Prehled Slov
+      <Form/>
     {error && <p>{error}</p>}
     {data.map((oneWord)=>{
       const {id, wordDe, wordCze, sentence} = oneWord
