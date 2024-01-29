@@ -45,8 +45,8 @@ const WordsOverview = () => {
 
       return <div key={id}>
         <div>
-          <p><strong>Česky:</strong> {wordCze}</p>
           <p><strong>Německy:</strong> {wordDe}</p>
+          <p><strong>Česky:</strong> {wordCze}</p>
           <p><strong>Věta:</strong> {sentence}</p>
         </div>
         <button type="button" onClick={()=>deleteWord(id)}>Smazat</button>
