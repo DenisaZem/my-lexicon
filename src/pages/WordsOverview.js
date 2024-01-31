@@ -2,7 +2,6 @@ import { projectFirestore } from "../firebase/config"
 import { useState, useEffect } from "react"
 import Form from "../components/Form"
 
-
 const WordsOverview = () => {
 
   const [error, setError] = useState(false)
@@ -11,14 +10,12 @@ const WordsOverview = () => {
    useEffect (()=>{
     const unsubscribe = projectFirestore.collection("deutsch").onSnapshot((snapshot)=>{
       console.log(snapshot)
-
       if(snapshot.empty){
         setError("Žádná slovíčka k zobrazení")
         setData([])
       } else{
         let result = []
         snapshot.docs.forEach((oneWord)=>{
-  
           result.push({id:oneWord.id, ...oneWord.data()})
           console.log(result)
           setData(result)
@@ -26,9 +23,7 @@ const WordsOverview = () => {
         })
       }
     }, (err) => {setError(err.message)} )
-
     return () => {unsubscribe ()}
-
   },[])
 
   const deleteWord = (id) => {
@@ -42,7 +37,6 @@ const WordsOverview = () => {
     {error && <p>{error}</p>}
     {data.map((oneWord)=>{
       const {id, wordDe, wordCze, sentence} = oneWord
-
       return <div key={id}>
         <div>
           <p><strong>Německy:</strong> {wordDe}</p>

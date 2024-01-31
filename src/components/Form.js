@@ -8,21 +8,17 @@ const Form = () => {
 
     const submitForm = async (e) => {
         e.preventDefault()
-
        const newWord = {wordDe, wordCze, sentence}
-
        try{
         await projectFirestore.collection("deutsch").add(newWord)
-
         setWordDe("")
         setWordCze("")
         setSentence("")
-
        } catch (err) {
         console.log(err.message)
        }
     }
-
+    
   return (
     <form onSubmit={submitForm}>
         <input 
