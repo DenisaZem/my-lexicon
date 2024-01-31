@@ -1,6 +1,7 @@
 import { projectFirestore } from "../firebase/config"
 import { useState, useEffect } from "react"
 import Form from "../components/Form"
+import "./WordsOverview.css"
 
 const WordsOverview = () => {
 
