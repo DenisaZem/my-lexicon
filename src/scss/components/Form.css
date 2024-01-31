@@ -2,7 +2,6 @@
   width: 300px;
   margin: 50px auto;
   padding: 20px;
-  /* border: 1px solid #ddd; */
   border-radius: 8px;
   background-color: #7F7C9B;
   border: 2px solid rgb(168, 166, 163);
@@ -17,4 +16,10 @@
   box-sizing: border-box;
   background-color: #c1c0c7;
   font-size: 16px;
+}
+.AddWordForm .submitButton {
+  background-color: rgb(255, 175, 14);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
 }/*# sourceMappingURL=Form.css.map */

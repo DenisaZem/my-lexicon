@@ -1,3 +1,5 @@
+import "../scss/components/Header.css"
+
 const Header =()=>{
 
     return(

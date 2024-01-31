@@ -24,5 +24,12 @@
                 margin: 5px;
                 padding: 2px;
             }
+
+            .deleteButton {
+                background-color: $button-color;
+                border: none;
+                color: #fff;
+                border-radius: 8px;
+            }
         }
 }

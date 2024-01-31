@@ -20,4 +20,10 @@
 .main_container .wordBorder p {
   margin: 5px;
   padding: 2px;
+}
+.main_container .wordBorder .deleteButton {
+  background-color: rgb(255, 175, 14);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
 }/*# sourceMappingURL=WordsOverview.css.map */

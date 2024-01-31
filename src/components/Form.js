@@ -46,6 +46,7 @@ const Form = () => {
         <input 
             type="submit" 
             value="Přidat"
+            className="submitButton"
         />
 
     </form>

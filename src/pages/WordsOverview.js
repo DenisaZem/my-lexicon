@@ -45,7 +45,7 @@ const WordsOverview = () => {
           <p><strong>Německy:</strong> {wordDe}</p>
           <p><strong>Česky:</strong> {wordCze}</p>
           <p><strong>Věta:</strong> {sentence}</p>
-          <button type="button" onClick={()=>deleteWord(id)}>Smazat</button>
+          <button type="button" onClick={()=>deleteWord(id)} className="deleteButton">Smazat</button>
       </div>
     
       
