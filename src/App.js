@@ -1,13 +1,13 @@
-import Header from "./components/Header"
-import WordsOverview from "./pages/WordsOverview"
+import Header from "./components/Header";
+import WordsOverview from "./pages/WordsOverview";
 
 const App = () => {
   return (
     <div>
-      <Header/>
-      <WordsOverview/>
+      <Header />
+      <WordsOverview />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
