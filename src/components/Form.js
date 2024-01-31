@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { projectFirestore } from "../firebase/config"
+import "../scss/components/Form.css"
 
 const Form = () => {
     const[wordDe, setWordDe] = useState("")
@@ -20,7 +21,7 @@ const Form = () => {
     }
     
   return (
-    <form onSubmit={submitForm}>
+    <form onSubmit={submitForm} className="AddWordForm">
         <input 
             type="text" 
             placeholder="německé slovo"

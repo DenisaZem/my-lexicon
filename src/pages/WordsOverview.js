@@ -1,7 +1,7 @@
 import { projectFirestore } from "../firebase/config"
 import { useState, useEffect } from "react"
 import Form from "../components/Form"
-import "./WordsOverview.css"
+import "../scss/pages/WordsOverview.css"
 
 const WordsOverview = () => {
 
@@ -34,19 +34,23 @@ const WordsOverview = () => {
   return (
     <div className="main_container">
       <h1>Přehled slov</h1>
+    
       <Form/>
+      <div className="main_container--grid"> 
+
     {error && <p>{error}</p>}
     {data.map((oneWord)=>{
       const {id, wordDe, wordCze, sentence} = oneWord
       return <div key={id} className="wordBorder">
-        <div>
           <p><strong>Německy:</strong> {wordDe}</p>
           <p><strong>Česky:</strong> {wordCze}</p>
           <p><strong>Věta:</strong> {sentence}</p>
-        </div>
-        <button type="button" onClick={()=>deleteWord(id)}>Smazat</button>
+          <button type="button" onClick={()=>deleteWord(id)}>Smazat</button>
       </div>
+    
+      
     })}
+    </div>
     </div>
   )
 }
