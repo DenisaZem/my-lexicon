@@ -32,13 +32,13 @@ const WordsOverview = () => {
   }
 
   return (
-    <div>
-      Prehled Slov
+    <div className="main_container">
+      <h1>Přehled slov</h1>
       <Form/>
     {error && <p>{error}</p>}
     {data.map((oneWord)=>{
       const {id, wordDe, wordCze, sentence} = oneWord
-      return <div key={id}>
+      return <div key={id} className="wordBorder">
         <div>
           <p><strong>Německy:</strong> {wordDe}</p>
           <p><strong>Česky:</strong> {wordCze}</p>
