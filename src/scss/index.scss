@@ -1,8 +1,5 @@
 @import "./partials/variables";
-
-body {
-    padding: 0;
-    margin: 0;
-    background-color: $main-wall-color;
-    color: $letters;
-}
+@import "./components/Form";
+@import "./components/Header";
+@import "./layouts/WordsOverview";
+@import "./elements/base.scss";

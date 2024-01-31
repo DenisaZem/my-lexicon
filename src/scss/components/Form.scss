@@ -1,29 +1,27 @@
-@import "../partials/variables";
-
 .AddWordForm {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #7F7C9B;
-    border: 2px solid rgb(168, 166, 163);
-    box-shadow: -40px -30px 20px #1b1a1a;
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #7F7C9B;
+  border: 2px solid rgb(168, 166, 163);
+  box-shadow: -5px -5px 20px #1b1a1a;
 
-      input {
-        width: 100%;
-        margin-bottom: 10px;
-        padding: 10px;
-        border: 1px solid #dbdbdb;
-        border-radius: 4px;
-        box-sizing: border-box;
-        background-color:#c1c0c7;
-        font-size: 16px;
-      }
-
-      .submitButton {
-        background-color: $button-color;
-        border: none;
-        color: #fff;
-        border-radius: 8px;
-      }
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #c1c0c7;
+    font-size: 16px;
   }
+
+  .submitButton {
+    background-color: $button-color;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+  }
+}
