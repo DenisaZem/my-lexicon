@@ -39,23 +39,15 @@ const WordsOverview = () => {
   return (
     <div className="main_container">
       <h1>Přehled slov</h1>
-
-      <Form />
       <div className="main_container--grid">
         {error && <p>{error}</p>}
         {data.map((oneWord) => {
           const { id, wordDe, wordCze, sentence } = oneWord;
           return (
             <div key={id} className="wordBorder">
-              <p>
-                <strong>Německy:</strong> {wordDe}
-              </p>
-              <p>
-                <strong>Česky:</strong> {wordCze}
-              </p>
-              <p>
-                <strong>Věta:</strong> {sentence}
-              </p>
+              <p className="transWorsDe">{wordDe}</p>
+              <p className="trans">překlad</p>
+              <p className="transWordCz">{wordCze}</p>
               <button
                 type="button"
                 onClick={() => deleteWord(id)}

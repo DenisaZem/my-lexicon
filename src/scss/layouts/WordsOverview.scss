@@ -1,5 +1,3 @@
-
-
 .main_container {
     display: flex;
     justify-content: center;
@@ -8,28 +6,66 @@
 
     .main_container--grid {
         margin: 30px;
+        max-width: 1200px;
     }
 
-        .wordBorder {
-            display: grid;
-            grid-template: 100% / repeat(3, 1fr) 1fr;
-            border: 2px solid rgb(168, 166, 163);
+    .wordBorder {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 1fr;
+        border: 2px solid rgb(168, 166, 163);
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+        box-shadow: $box-shadow;
+        background-color: $container-color;
+
+        .transWorsDe,
+        .transWordCz {
+            border: 1px solid rgb(168, 166, 163);
+            // height: 100%;
+            width: auto;
+            // min-width: 150px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            // display: flex;
             justify-content: center;
             align-items: center;
-            margin: 15px;
-            box-shadow: $box-shadow;
-            background-color: $container-color;
-
-            p {
-                margin: 5px;
-                padding: 2px;
-            }
-
-            .deleteButton {
-                background-color: $button-color;
-                border: none;
-                color: #fff;
-                border-radius: 8px;
-            }
+            padding: 10px;
+            margin: 10px;
         }
+
+        p.transWorsDe,
+        p.transWordCz {
+            color: #262548;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .trans {
+            display: flex;
+            justify-self: flex-end;
+            align-self: center;
+            margin-right: 10px;
+            font-size: 12px
+        }
+
+        .deleteButton {
+            background-color: $button-color;
+            border: none;
+            color: #fff;
+            border-radius: 3px;
+            padding: 5px;
+            cursor: pointer;
+            height: 25px;
+            width: 100px;
+            justify-self: center;
+
+            &:hover{
+                background-color: #ff3333;
+            }
+
+        }
+    }
 }
