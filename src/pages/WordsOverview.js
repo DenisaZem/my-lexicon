@@ -1,6 +1,5 @@
 import { projectFirestore } from "../firebase/config";
 import { useState, useEffect } from "react";
-import Form from "../components/Form";
 
 const WordsOverview = () => {
   const [error, setError] = useState(false);
@@ -42,19 +41,21 @@ const WordsOverview = () => {
       <div className="main_container--grid">
         {error && <p>{error}</p>}
         {data.map((oneWord) => {
-          const { id, wordDe, wordCze, sentence } = oneWord;
+          const { id, wordDe, wordCze } = oneWord;
           return (
             <div key={id} className="wordBorder">
               <p className="transWorsDe">{wordDe}</p>
               <p className="trans">překlad</p>
               <p className="transWordCz">{wordCze}</p>
-              <button
-                type="button"
-                onClick={() => deleteWord(id)}
-                className="deleteButton"
-              >
-                Smazat
-              </button>
+              <div className="buttonsSection">
+                <button
+                  type="button"
+                  onClick={() => deleteWord(id)}
+                  className="deleteButton"
+                >
+                  Smazat
+                </button>
+              </div>
             </div>
           );
         })}

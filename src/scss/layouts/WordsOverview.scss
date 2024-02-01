@@ -6,33 +6,31 @@
 
     .main_container--grid {
         margin: 30px;
-        max-width: 1200px;
+        margin-top: 0;
+        min-width: 80%;
     }
 
     .wordBorder {
         display: grid;
-        grid-template-columns: repeat(3, 1fr) 1fr;
+        grid-template-columns: 1.5fr 0.5fr 1.2fr 1fr;
+        ;
+        grid-template-rows: 29px;
         border: 2px solid rgb(168, 166, 163);
-        justify-content: center;
-        align-items: center;
-        margin: 15px;
+        margin: 10px;
+        padding-left: 20px;
         box-shadow: $box-shadow;
         background-color: $container-color;
+        height: 30px;
 
         .transWorsDe,
         .transWordCz {
             border: 1px solid rgb(168, 166, 163);
-            // height: 100%;
             width: auto;
-            // min-width: 150px;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-            // display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
-            margin: 10px;
         }
 
         p.transWorsDe,
@@ -41,6 +39,10 @@
             font-size: 15px;
             font-weight: 700;
             text-align: center;
+            margin: 5px;
+            padding: 1px;
+            align-self: center;
+            justify-content: center;
         }
 
         .trans {
@@ -51,21 +53,28 @@
             font-size: 12px
         }
 
-        .deleteButton {
-            background-color: $button-color;
-            border: none;
-            color: #fff;
-            border-radius: 3px;
-            padding: 5px;
-            cursor: pointer;
-            height: 25px;
-            width: 100px;
-            justify-self: center;
+        .buttonsSection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            &:hover{
-                background-color: #ff3333;
+            .deleteButton {
+                background-color: $button-color;
+                border: none;
+                color: #fff;
+                border-radius: 3px;
+                padding: 5px;
+                cursor: pointer;
+                height: 22px;
+                width: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: #ff3333;
+                }
             }
-
         }
     }
 }
