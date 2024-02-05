@@ -8,7 +8,6 @@ const WordsOverview = () => {
   useEffect(() => {
     const unsubscribe = projectFirestore.collection("deutsch").onSnapshot(
       (snapshot) => {
-        console.log(snapshot);
         if (snapshot.empty) {
           setError("Žádná slovíčka k zobrazení");
           setData([]);
@@ -16,9 +15,7 @@ const WordsOverview = () => {
           let result = [];
           snapshot.docs.forEach((oneWord) => {
             result.push({ id: oneWord.id, ...oneWord.data() });
-            console.log(result);
             setData(result);
-            setError("");
           });
         }
       },
@@ -39,12 +36,12 @@ const WordsOverview = () => {
     <div className="main_container">
       <h1>Přehled slov</h1>
       <div className="main_container--grid">
-        {error && <p>{error}</p>}
+        {error && <p>{error}</p>} 
         {data.map((oneWord) => {
           const { id, wordDe, wordCze } = oneWord;
           return (
             <div key={id} className="wordBorder">
-              <p className="transWorsDe">{wordDe}</p>
+              <p className="transWordDe">{wordDe}</p>
               <p className="trans">překlad</p>
               <p className="transWordCz">{wordCze}</p>
               <div className="buttonsSection">

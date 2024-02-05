@@ -1,8 +1,17 @@
-
 body {
     padding: 0;
     margin: 0;
-    background-color: $main-wall-color;
+    background-color: $dark-blue;
     color: $letters;
-    font-family: $main-fond;
+    font-family: $main-font;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    }
+    
+    p {
+    padding: 0;
+    margin: 0;
+    }

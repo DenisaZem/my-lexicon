@@ -4,24 +4,26 @@
     align-items: center;
     flex-direction: column;
 
+    h1 {
+        margin: 10px;
+    }
+
     .main_container--grid {
         margin: 30px;
-        margin-top: 0;
-        min-width: 80%;
     }
 
     .wordBorder {
         display: grid;
         grid-template-columns: 1.5fr 0.5fr 1.2fr 1fr;
-        grid-template-rows: 29px;
+        // grid-template-rows: 29px;
         border: 2px solid rgb(168, 166, 163);
         margin: 10px;
         padding-left: 20px;
         box-shadow: $box-shadow;
-        background-color: $container-color;
-        height: 30px;
+        background-color: $light-violet;
+ 
 
-        .transWorsDe,
+        .transWordDe,
         .transWordCz {
             border: 1px solid rgb(168, 166, 163);
             width: auto;
@@ -30,23 +32,24 @@
             text-overflow: ellipsis;
         }
 
-        p.transWorsDe,
-        p.transWordCz {
-            color: #262548;
-            font-size: 14px;
-            font-weight: 600;
-            text-align: center;
-            margin: 5px;
-            padding: 1px;
-            align-self: center;
-        }
+            p {
+                color: #262548;
+                font-size: 14px;
+                font-weight: 600;
+                text-align: center;
+                margin: 5px;
+                padding: 1px;
+                align-self: center;
+            }
 
         .trans {
             display: flex;
             justify-self: flex-end;
             align-self: center;
             margin-right: 10px;
-            font-size: 12px
+            font-size: 12px;
+            font-weight: 300;
+            color: #c1c0c7;;
         }
 
         .buttonsSection {
@@ -55,13 +58,13 @@
             align-items: center;
 
             .deleteButton {
-                background-color: $button-color;
+                background-color: $yellow;
                 border: none;
                 color: #fff;
                 border-radius: 3px;
                 padding: 5px;
                 cursor: pointer;
-                height: 22px;
+                height: 70%;
                 width: 100px;
                 display: flex;
                 justify-content: center;
