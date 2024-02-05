@@ -15,13 +15,11 @@
     .wordBorder {
         display: grid;
         grid-template-columns: 1.5fr 0.5fr 1.2fr 1fr;
-        // grid-template-rows: 29px;
         border: 2px solid rgb(168, 166, 163);
         margin: 10px;
         padding-left: 20px;
         box-shadow: $box-shadow;
         background-color: $light-violet;
- 
 
         .transWordDe,
         .transWordCz {
@@ -30,17 +28,14 @@
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
+            color: #262548;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            margin: 5px;
+            padding: 1px;
+            align-self: center;
         }
-
-            p {
-                color: #262548;
-                font-size: 14px;
-                font-weight: 600;
-                text-align: center;
-                margin: 5px;
-                padding: 1px;
-                align-self: center;
-            }
 
         .trans {
             display: flex;
@@ -49,7 +44,7 @@
             margin-right: 10px;
             font-size: 12px;
             font-weight: 300;
-            color: #c1c0c7;;
+            color: #c1c0c7;
         }
 
         .buttonsSection {
@@ -65,7 +60,7 @@
                 padding: 5px;
                 cursor: pointer;
                 height: 70%;
-                width: 100px;
+                width: 60%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -73,6 +68,35 @@
                 &:hover {
                     background-color: #ff3333;
                 }
+            }
+        }
+
+        @media screen and (max-width: 620px) {
+            .transWordDe,
+            .transWordCz,
+            .trans,
+            .deleteButton {
+                font-size: 11px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .transWordDe,
+            .transWordCz,
+            .trans,
+            .deleteButton {
+                font-size: 8px;
+            }
+        }
+
+        @media screen and (max-width: 350px) {
+            .transWordDe,
+            .transWordCz {
+                font-size: 7px;
+            }
+
+            .deleteButton {
+                font-size: 6px;
             }
         }
     }
