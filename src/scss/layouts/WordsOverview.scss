@@ -13,12 +13,11 @@
     }
 
     .main_container--grid {
-        margin: 30px;
         width: 80%;
         max-width: 1000px;
 
         @media screen and (max-width: 480px) {
-            margin-top: 10px;
+            margin-top: 0px;
         }
     }
 
@@ -26,7 +25,7 @@
         display: grid;
         grid-template-columns: 1.5fr 0.5fr 1.2fr 1fr;
         border: 2px solid rgb(168, 166, 163);
-        margin: 10px;
+        margin: 10px ;
         padding-left: 20px;
         box-shadow: $box-shadow;
         background-color: $light-violet;

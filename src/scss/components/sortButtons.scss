@@ -1,21 +1,27 @@
 .sortButtons {
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
-    justify-content:space-around;
-    align-items: center;
-    width: 250px;
+    justify-content:flex-end;
+    width: 65%;
 
     .btn--sortAlphabeth,
     .btn--sortDate {
-        background-color:  #ffffff;
+        background-color: transparent;
         border: none;
-        color: #535353;
+        color: $color-letter;
         border-radius: 3px;
-        padding: 3px;
+        padding: 0 10px;
         cursor: pointer;
 
         &:hover {
-            background-color: #d3d3d3;
+            color: #d3d3d3;
+        }
+        @media screen and (max-width: 700px) {
+            font-size: 11px;
+            padding: 0 4px;
+        }
+        @media screen and (max-width: 480px) {
+            font-size: 8px;
         }
     }
 }
