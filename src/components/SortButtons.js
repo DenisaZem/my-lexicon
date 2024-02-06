@@ -9,8 +9,17 @@ const SortButtons = ({ onSortChange }) => {
 
   return (
     <div className="sortButtons">
-      <button onClick={() => setSortBy("alphabet")}>Řadit abecedně</button>
-      <button onClick={() => setSortBy("date")}>Řadit podle data</button>
+      <button
+        className="btn--sortAlphabeth"
+        onClick={() => setSortBy("alphabet")}
+        >
+        Řadit abecedně
+      </button>
+      <button className="btn--sortDate" 
+        onClick={() => setSortBy("date")}
+        >
+        Řadit podle data
+      </button>
     </div>
   )
 }

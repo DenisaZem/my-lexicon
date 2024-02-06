@@ -1,0 +1,29 @@
+.sortButtons {
+
+    margin-top: 15px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 250px;
+
+
+    .btn--sortAlphabeth,
+    .btn--sortDate {
+        background-color:  #ffffff;
+        border: none;
+        color: #535353;
+        border-radius: 3px;
+        padding: 3px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #d3d3d3;
+        }
+
+    }
+
+
+
+
+}
+

@@ -61,13 +61,11 @@ const WordsOverview = () => {
     } else if (sortBy === "date") {
       sortedData.sort((a, b) =>
         (b.createdAt?.toDate() || 0) - (a.createdAt?.toDate() || 0)
-      );
+      )
     }
 
     setData(sortedData)
   }, [sortBy])
-  
-
 
   return (
     <div className="main_container">
