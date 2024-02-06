@@ -6,6 +6,7 @@ const SearchBar = ({ searchTerm, onSearchChange }) => {
         placeholder="Vyhledat slovo"
         value={searchTerm}
         onChange={onSearchChange}
+        className="searchInput"
       />
     </div>
   )
