@@ -6,10 +6,18 @@
 
     h1 {
         margin: 10px;
+
+        @media screen and (max-width: 480px) {
+            font-size: 20px;
+        }
     }
 
     .main_container--grid {
         margin: 30px;
+
+        @media screen and (max-width: 480px) {
+            margin-top: 10px;
+        }
     }
 
     .wordBorder {
