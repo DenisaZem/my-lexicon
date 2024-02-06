@@ -2,6 +2,7 @@ import { projectFirestore } from "../firebase/config"
 import { useState, useEffect } from "react"
 import SearchBar from "../components/SearchBar"
 import SortButtons from "../components/SortButtons"
+import Form from "../components/Form"
 
 const WordsOverview = () => {
   const [error, setError] = useState(false)
@@ -57,14 +58,16 @@ const WordsOverview = () => {
     if (sortBy === "alphabet") {
       sortedData.sort((a, b) =>
         a.wordDe.toLowerCase().localeCompare(b.wordDe.toLowerCase())
-      );
+      )
     } else if (sortBy === "date") {
-      sortedData.sort((a, b) =>
-        (b.createdAt?.toDate() || 0) - (a.createdAt?.toDate() || 0)
+      sortedData.sort((a, b) => {
+        const dateA = b.createdAt?.toDate() || 0
+        const dateB = a.createdAt?.toDate() || 0
+        return dateA - dateB
+      }
       )
     }
-
-    setData(sortedData)
+    setData([...sortedData])
   }, [sortBy])
 
   return (

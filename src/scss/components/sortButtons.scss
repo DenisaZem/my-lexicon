@@ -1,11 +1,9 @@
 .sortButtons {
-
     margin-top: 15px;
     display: flex;
     justify-content:space-around;
     align-items: center;
     width: 250px;
-
 
     .btn--sortAlphabeth,
     .btn--sortDate {
@@ -19,11 +17,6 @@
         &:hover {
             background-color: #d3d3d3;
         }
-
     }
-
-
-
-
 }
 

@@ -7,8 +7,14 @@ const Form = () => {
   const [sentence, setSentence] = useState("");
 
   const submitForm = async (e) => {
-    e.preventDefault();
-    const newWord = { wordDe, wordCze, sentence };
+    e.preventDefault()
+    const newWord = { 
+      wordDe, 
+      wordCze, 
+      sentence,
+      createdAt: new Date() 
+    }
+
     try {
       await projectFirestore.collection("deutsch").add(newWord);
       setWordDe("");
