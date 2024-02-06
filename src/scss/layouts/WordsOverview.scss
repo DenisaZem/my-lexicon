@@ -6,10 +6,6 @@
 
     h1 {
         margin: 10px;
-
-        @media screen and (max-width: 480px) {
-            font-size: 20px;
-        }
     }
 
     .main_container--grid {
@@ -21,7 +17,7 @@
             margin-top: 0px;
         }
     }
-
+    
     .wordBorder {
         display: grid;
         grid-template-columns: 1.5fr 0.5fr 1.2fr 1fr;
