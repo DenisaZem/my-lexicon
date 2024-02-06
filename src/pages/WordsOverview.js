@@ -1,44 +1,58 @@
-import { projectFirestore } from "../firebase/config";
-import { useState, useEffect } from "react";
+import { projectFirestore } from "../firebase/config"
+import { useState, useEffect } from "react"
+import SearchBar from "../components/SearchBar"
 
 const WordsOverview = () => {
-  const [error, setError] = useState(false);
-  const [data, setData] = useState([]);
+  const [error, setError] = useState(false)
+  const [data, setData] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
 
   useEffect(() => {
     const unsubscribe = projectFirestore.collection("deutsch").onSnapshot(
       (snapshot) => {
         if (snapshot.empty) {
-          setError("Žádná slovíčka k zobrazení");
-          setData([]);
+          setError("Žádná slovíčka k zobrazení")
+          setData([])
         } else {
-          let result = [];
+          let result = []
           snapshot.docs.forEach((oneWord) => {
-            result.push({ id: oneWord.id, ...oneWord.data() });
-            setData(result);
-          });
+            result.push({ id: oneWord.id, ...oneWord.data() })
+            setData(result)
+          })
         }
       },
       (err) => {
-        setError(err.message);
+        setError(err.message)
       }
-    );
+    )
     return () => {
-      unsubscribe();
-    };
-  }, []);
+      unsubscribe()
+    }
+  }, [])
 
   const deleteWord = (id) => {
-    projectFirestore.collection("deutsch").doc(id).delete();
-  };
+    projectFirestore.collection("deutsch").doc(id).delete()
+  }
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value)
+  }
+
+  const filteredData = data.filter((oneWord) => {
+    return (
+      oneWord.wordDe.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      oneWord.wordCze.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  })
 
   return (
     <div className="main_container">
       <h1>Přehled slov</h1>
+      <SearchBar searchTerm={searchTerm} onSearchChange={handleSearch} />
       <div className="main_container--grid">
-        {error && <p>{error}</p>} 
-        {data.map((oneWord) => {
-          const { id, wordDe, wordCze } = oneWord;
+        {error && <p>{error}</p>}
+        {filteredData.map((oneWord) => {
+          const { id, wordDe, wordCze } = oneWord
           return (
             <div key={id} className="wordBorder">
               <p className="transWordDe">{wordDe}</p>
@@ -54,11 +68,11 @@ const WordsOverview = () => {
                 </button>
               </div>
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default WordsOverview;
+export default WordsOverview
