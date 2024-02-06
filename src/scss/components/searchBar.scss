@@ -8,6 +8,7 @@
 
     .searchInput {
         width: 30%;
+        max-width: 280px;
         height: 80%;
         border-radius: 5px;
         padding: 5px;
@@ -16,6 +17,10 @@
 
         &:focus {
             outline: none;
+        }
+
+        @media screen and (max-width: 480px) {
+            height: 40%;  
         }
     }
 }
