@@ -5,9 +5,15 @@ const WordsTable = ({ data, onDelete }) => {
         const { id, wordDe, wordCze } = oneWord
         return (
           <div key={id} className="wordTable--oneLine">
-            <p className="wordTable--deutchWord">{wordDe}</p>
-            <p className="wordTable--trans">překlad</p>
-            <p className="wordTable--czechWord">{wordCze}</p>
+            <div className="wordTable--deutchWord">
+              <p>{wordDe}</p>
+            </div>
+            <div className="wordTable--trans">
+              <p>překlad</p>
+            </div>
+            <div className="wordTable--czechWord">
+             <p>{wordCze}</p>
+            </div>
             <div className="buttonsSection">
               <button
                 type="button"
