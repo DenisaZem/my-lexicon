@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import SearchBar from "../components/SearchBar"
 import SortButtons from "../components/SortButtons"
 // import Form from "../components/Form"
-import WordsTable from "../components/WordsTab"
+import WordsTable from "../components/WordsTable"
 
 const WordsOverview = () => {
   const [error, setError] = useState(false)
