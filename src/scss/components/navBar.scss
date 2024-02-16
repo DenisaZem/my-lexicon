@@ -1,0 +1,33 @@
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 75px;
+    background-color: #ffff;
+    position: fixed;
+    top: 0;
+
+    .navBar--img_logo {
+        width: 150px;
+        margin: 5px;
+        position: fixed;
+        left: 0;
+    }
+
+    .navBar--list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        width: 50%;
+
+        li {
+            font-size: 25px;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
