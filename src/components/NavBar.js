@@ -1,7 +1,14 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../images/onlineEdu.png";
+import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 
 const NavBar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <nav className="navBar">
       <Link to="/">
@@ -11,7 +18,12 @@ const NavBar = () => {
           className="navBar--img_logo"
         />
       </Link>
-      <ul className="navBar--list">
+      {showMenu ? (
+        <GiCancel className="menu-icon" onClick={toggleMenu} />
+      ) : (
+        <GiHamburgerMenu className="menu-icon" onClick={toggleMenu} />
+      )}
+      <ul className={`navBar--list ${showMenu ? "show" : ""}`}>
         <li>
           <Link to="/">Úvod</Link>
         </li>
