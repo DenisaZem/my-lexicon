@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 
@@ -8,6 +8,10 @@ const NavBar = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  const closeMenu = useCallback(() => {
+    setShowMenu(false);
+  }, []);
 
   useEffect(() => {
     const closeMenuOnOutsideClick = (e) => {
@@ -22,6 +26,18 @@ const NavBar = () => {
       document.removeEventListener("click", closeMenuOnOutsideClick);
     };
   }, []);
+
+  useEffect(() => {
+    const closeMenuOnResize = () => {
+      setShowMenu(false);
+    };
+
+    window.addEventListener("resize", closeMenuOnResize);
+
+    return () => {
+      window.removeEventListener("resize", closeMenuOnResize);
+    };
+  }, [showMenu]);
 
   const isOpen = showMenu ? "open" : "";
 
@@ -41,7 +57,7 @@ const NavBar = () => {
         ) : (
           <GiHamburgerMenu className="menu-icon" onClick={toggleMenu} />
         )}
-        <ul className={`navBar--list ${showMenu ? "show" : ""}`}>
+        <ul onClick={closeMenu} className={`navBar--list ${showMenu ? "show" : ""}`}>
           <li>
             <Link to="/">Úvod</Link>
           </li>
