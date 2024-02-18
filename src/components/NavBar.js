@@ -68,7 +68,7 @@ const NavBar = () => {
           />
         </Link>
         {showMenu ? (
-          <GiCancel className="menu-icon" onClick={toggleMenu} />
+          <GiCancel className="menu-icon-cancel" onClick={toggleMenu} />
         ) : (
           <GiHamburgerMenu className="menu-icon" onClick={toggleMenu} />
         )}
