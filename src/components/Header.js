@@ -1,9 +1,10 @@
+import NavBar from "./NavBar"
 
 
 const Header =()=>{
 
     return(
-        <h1>header</h1>
+        <NavBar/>
     )
 }
 

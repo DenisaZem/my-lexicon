@@ -15,7 +15,7 @@ const App = () => {
           <Route path="overview" element={<WordsOverview />} />
           <Route path="form" element={<Form />} />
           <Route path="detail-word/:wordId" element={<WordDetail />} />
-        </Route>
+      </Route>
       </Routes>
     </BrowserRouter>
   )

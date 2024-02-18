@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 
@@ -9,11 +9,25 @@ const NavBar = () => {
     setShowMenu(!showMenu);
   };
 
+  useEffect(() => {
+    const closeMenuOnOutsideClick = (e) => {
+      if (showMenu && (e.target.closest(".navBar") === null || e.target.closest(".background"))) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenuOnOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", closeMenuOnOutsideClick);
+    };
+  }, []);
+
   const isOpen = showMenu ? "open" : "";
 
   return (
     <div>
-      <div className={`background ${isOpen}`}></div>
+      <div className={`background ${isOpen}`} onClick={toggleMenu}></div>
       <nav className="navBar">
         <Link to="/">
           <img
