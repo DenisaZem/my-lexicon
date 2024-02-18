@@ -5,17 +5,30 @@ import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
+// for not scrolling window
+  if (showMenu) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
+
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
+  // for closing menu after page redirect
   const closeMenu = useCallback(() => {
     setShowMenu(false);
   }, []);
 
+  // for closing menu after click outside of NavBar--list
   useEffect(() => {
     const closeMenuOnOutsideClick = (e) => {
-      if (showMenu && (e.target.closest(".navBar") === null || e.target.closest(".background"))) {
+      if (
+        showMenu &&
+        (e.target.closest(".navBar") === null ||
+          e.target.closest(".background"))
+      ) {
         setShowMenu(false);
       }
     };
@@ -27,6 +40,7 @@ const NavBar = () => {
     };
   }, []);
 
+  // for closing menu after width window change
   useEffect(() => {
     const closeMenuOnResize = () => {
       setShowMenu(false);
@@ -39,6 +53,7 @@ const NavBar = () => {
     };
   }, [showMenu]);
 
+  // for show .backround
   const isOpen = showMenu ? "open" : "";
 
   return (
@@ -57,7 +72,10 @@ const NavBar = () => {
         ) : (
           <GiHamburgerMenu className="menu-icon" onClick={toggleMenu} />
         )}
-        <ul onClick={closeMenu} className={`navBar--list ${showMenu ? "show" : ""}`}>
+        <ul
+          onClick={closeMenu}
+          className={`navBar--list ${showMenu ? "show" : ""}`}
+        >
           <li>
             <Link to="/">Úvod</Link>
           </li>
