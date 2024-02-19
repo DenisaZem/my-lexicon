@@ -2,7 +2,28 @@ body {
     padding: 0;
     margin: 0;
     padding-top: 75px;
-    background-color: $main-wall-color;
+    background-color: $dark-blue;
     color: $letters;
-    font-family: $main-fond;
+    font-family: $main-font;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    }
+
+h1 {
+
+    font-size: 32px;
+
+    @media screen and (max-width: 700px) {
+        font-size: 25px;
+    }
+    @media screen and (max-width: 480px) {
+        font-size: 20px;
+    }
+}
+    p {
+    padding: 0;
+    margin: 0;
+    }

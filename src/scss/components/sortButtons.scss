@@ -1,0 +1,32 @@
+.sortButtons {
+    margin-top: 10px;
+    display: flex;
+    justify-content:flex-end;
+    width: 65%;
+
+    @media screen and (max-width: 700px) {
+        width: 75%;
+    }
+
+    .btn--sortAlphabeth,
+    .btn--sortDate {
+        background-color: transparent;
+        border: none;
+        color: $color-letter;
+        border-radius: 3px;
+        padding: 0 10px;
+        cursor: pointer;
+
+        &:hover {
+            color: #d3d3d3;
+        }
+        @media screen and (max-width: 700px) {
+            font-size: 11px;
+            padding: 0 4px;
+        }
+        @media screen and (max-width: 480px) {
+            font-size: 8px;
+        }
+    }
+}
+
