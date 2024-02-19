@@ -1,35 +1,10 @@
-
-
 .main_container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    .main_container--grid {
-        margin: 30px;
+    h1 {
+        margin: 10px;
     }
-
-        .wordBorder {
-            display: grid;
-            grid-template: 100% / repeat(3, 1fr) 1fr;
-            border: 2px solid rgb(168, 166, 163);
-            justify-content: center;
-            align-items: center;
-            margin: 15px;
-            box-shadow: $box-shadow;
-            background-color: $container-color;
-
-            p {
-                margin: 5px;
-                padding: 2px;
-            }
-
-            .deleteButton {
-                background-color: $button-color;
-                border: none;
-                color: #fff;
-                border-radius: 8px;
-            }
-        }
 }
