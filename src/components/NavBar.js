@@ -5,12 +5,14 @@ import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-// for not scrolling window
-  if (showMenu) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
+  // for not scrolling window
+  useEffect(() => {
+    if (showMenu) {
+      document.body.classList.add("active-modal");
+    } else {
+      document.body.classList.remove("active-modal");
+    }
+  }, [showMenu]);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -24,28 +26,27 @@ const NavBar = () => {
   // for closing menu after click outside of NavBar--list
   useEffect(() => {
     const closeMenuOnOutsideClick = (e) => {
-      if (
-        showMenu &&
-        (e.target.closest(".navBar") === null ||
-          e.target.closest(".background"))
-      ) {
+      const isClickOnBackground = e.target.classList.contains("background_black");
+      const isClickOnNavBarList= e.target.classList.contains(".navBar--list show");
+  
+      if (showMenu && isClickOnBackground && !isClickOnNavBarList) {
         setShowMenu(false);
       }
     };
 
     document.addEventListener("click", closeMenuOnOutsideClick);
-
+  
     return () => {
       document.removeEventListener("click", closeMenuOnOutsideClick);
     };
-  }, []);
+  }, [showMenu]);
+  
 
   // for closing menu after width window change
   useEffect(() => {
     const closeMenuOnResize = () => {
       setShowMenu(false);
     };
-
     window.addEventListener("resize", closeMenuOnResize);
 
     return () => {
@@ -58,7 +59,8 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className={`background ${isOpen}`} onClick={toggleMenu}></div>
+      <div className={`background_black ${isOpen}`}></div>
+      <div className={`background ${isOpen}`}></div>
       <nav className="navBar">
         <Link to="/">
           <img
