@@ -3,22 +3,25 @@
   }
 
   .background {
-      position: fixed;
-      z-index: 0;
-      top: 44px;
-      left: 0px;
-      aspect-ratio: 1 / 1;
-      translate: 0 -50%;
-      height: 88px;
-      background: #ffffff;
-      border-radius: 50%;
-      opacity: 0;
-      transition: 0.6s;
-  }
+    position: fixed;
+    z-index: 0;
+    top: 44px;
+    left: -4px;
+    aspect-ratio: 9 / 1;
+    transform: translate(0, -50%);
+    height: 88px;
+    background: linear-gradient(to bottom right, #ffffff 27%, $dark-blue 39%);
+
+
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.6s;
+}
+
 
   .background.open {
       height: 300vh;
-      opacity: 0.9;
+      opacity: 1;
   }
 
   .navBar {
@@ -33,7 +36,7 @@
 
       .navBar--img_logo {
           width: 150px;
-          margin: 5px;
+          margin: 10px;
       }
 
       .menu-icon {
@@ -69,10 +72,10 @@
           .menu-icon-cancel {
               visibility: visible;
               cursor: pointer;
-              color: $button-color;
+              color: $yellow;
               width: 30px;
               height: 30px;
-              margin: 5px;
+              margin: 10px;
               transition: transform 0.3s ease;
               &:hover {
                   transform: scale(1.3);
