@@ -2,7 +2,6 @@ import { projectFirestore } from "../firebase/config"
 import { useState, useEffect } from "react"
 import SearchBar from "../components/SearchBar"
 import SortButtons from "../components/SortButtons"
-// import Form from "../components/Form"
 import WordsTable from "../components/WordsTable"
 
 const WordsOverview = () => {
