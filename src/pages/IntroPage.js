@@ -1,12 +1,22 @@
-import peopleImage from '../images/people.png';
+import peopleImage from "../images/people.png";
 
 const IntroPage = () => {
   return (
     <div className="mainWall">
-      <img src={peopleImage} alt="People learning" className="mainWall__peopleImage" />
+      <img
+        src={peopleImage}
+        alt="People learning"
+        className="mainWall__peopleImage"
+      />
       <div className="mainWall__whiteBoard"></div>
-      
-    {/* <div className="home">
+      <div className="mainWall__title">
+        <p>
+          "Každý den je příležitost naučit se něco nového. Získejte sílu slov a
+          zapamatujte si je s lehkostí."
+        </p>
+      </div>
+
+      {/* <div className="home">
       <div className="mainBanner">
         <div className="wallpaper">
           <h1>Úvod</h1>
@@ -28,7 +38,7 @@ const IntroPage = () => {
         </p>
       </div>
     </div> */}
-  </div>
-);
+    </div>
+  );
 };
-export default IntroPage
+export default IntroPage;
