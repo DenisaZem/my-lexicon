@@ -11,13 +11,16 @@
     .mainWall__whiteBoard {}
         background-color: rgb(255, 255, 255);
         border-radius: 0 0 700px 700px;
+        width: 100%;
+        position: relative;
+        top: -20px;
+        z-index: 0;
 
         @media screen and (max-width: 600px) {
             .mainWall__peopleImage,
             .mainWall__peopleImage {
                 width: 300px;
             }
-
         }
 
 }
