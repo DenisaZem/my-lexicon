@@ -1,48 +1,84 @@
-.DetailWordTab {
+.DetailWord {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    height: 500px;
+    align-items: center;
     margin-top: 20px;
 
-    .DetailWordTab__container {
-        background-color: $light-violet;
-        height: 50%;
-        width: 40%;
-        border: 2px solid rgb(168, 166, 163);
-        box-shadow: -10px -10px 20px #615D76;
+    .DetailWordTab__wall {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 70px;
-        padding: 10px;
+        justify-content: flex-end;
+        // align-items: center;
+        height: 350px;
+        width: 60%;
+        margin-top: 20px;
+        box-shadow: -1px -1px 5px #615D76;
+        background: linear-gradient(to bottom, #827d9c, #ffffff);
 
-        .DetailWordTab__wordDe,
-        .DetailWordTab__wordCze,
-        .DetailWordTab__sentence {
-            font-weight: 800;
-            color: #262548;
-            margin-bottom: 15px;
+        .DetailWordTab__wall_ButtonSection {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            background: linear-gradient(to bottom, #ffffff, #827d9c, #ffffff);
+            height: 350px;
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 10px;
+                flex-direction: column;
+                background-color: rgba(255, 175, 14, 0.732);
+                border: none;
+                width: 50px;
+                height: 50px;
+                margin: 10px 10px;
+                border-radius: 30px;
+                font-family: Helvetica;
+                font-weight: 600;
+                cursor: pointer;
+            }
         }
 
-        .DetailWordTab__wordDe {
-            font-size: 22px;
-        }
+        .DetailWordTab__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(to bottom, #c9c5d8, #827d9c);
+            height: 90%;
+            width: 85%;
+            // border: 2px solid transparent;
+            // box-shadow: -3px -3px 5px #615D76;
+            margin-top: 70px;
+            padding: 10px;
 
-        .DetailWordTab__wordCze {
-            font-size: 20px;
-        }
+            .DetailWordTab__wordDe,
+            .DetailWordTab__wordCze,
+            .DetailWordTab__sentence {
+                font-weight: 800;
+                color: #262548;
+                margin-bottom: 15px;
+            }
 
-        .DetailWordTab__title {
-            color: rgb(194, 193, 192);
-            font-size: 15px;
-        }
+            .DetailWordTab__wordDe {
+                font-size: 22px;
+            }
 
-        .DetailWordTab__sentence {
-            text-align: center;
-            font-size: 13px;
-            margin-top: 10px;
+            .DetailWordTab__wordCze {
+                font-size: 20px;
+            }
+
+            .DetailWordTab__title {
+                color: rgb(255, 255, 255);
+                font-size: 15px;
+            }
+
+            .DetailWordTab__sentence {
+                text-align: center;
+                font-size: 13px;
+                margin-top: 10px;
+            }
         }
     }
 }
