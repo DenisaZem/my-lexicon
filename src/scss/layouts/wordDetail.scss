@@ -1,0 +1,48 @@
+.DetailWordTab {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 500px;
+    margin-top: 20px;
+
+    .DetailWordTab__container {
+        background-color: $light-violet;
+        height: 50%;
+        width: 40%;
+        border: 2px solid rgb(168, 166, 163);
+        box-shadow: -10px -10px 20px #615D76;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 70px;
+        padding: 10px;
+
+        .DetailWordTab__wordDe,
+        .DetailWordTab__wordCze,
+        .DetailWordTab__sentence {
+            font-weight: 800;
+            color: #262548;
+            margin-bottom: 15px;
+        }
+
+        .DetailWordTab__wordDe {
+            font-size: 22px;
+        }
+
+        .DetailWordTab__wordCze {
+            font-size: 20px;
+        }
+
+        .DetailWordTab__title {
+            color: rgb(194, 193, 192);
+            font-size: 15px;
+        }
+
+        .DetailWordTab__sentence {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+    }
+}

@@ -24,17 +24,22 @@ const WordDetail = () => {
       });
   }, [wordId]);
 
-
   return (
-    <section>
+    <section className="DetailWordTab">
       {error && <p>{error}</p>}
-      <div>
-        <h1>{data.wordDe}</h1>
-        <h3>{data.wordCze}</h3>
-        <p>
+      <div className="DetailWordTab__container">
+        <div className="DetailWordTab__wordDe">
+          <h2>{data.wordDe}</h2>
+        </div>
+        <div className="DetailWordTab__wordCze">
+          <h2>{data.wordCze}</h2>
+        </div>
+        <div className="DetailWordTab__title">
           <span>Příklad:</span>
-        </p>
-        <p>{data.sentence}</p>
+        </div>
+        <div className="DetailWordTab__sentence">
+          <h2>{data.sentence}</h2>
+        </div>
       </div>
     </section>
   );
