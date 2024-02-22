@@ -1,8 +1,11 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 const WordsTable = ({ data, onDelete }) => {
   return (
     <div className="wordTable">
       {data.map((oneWord) => {
-        const { id, wordDe, wordCze } = oneWord
+        const { id, wordDe, wordCze } = oneWord;
         return (
           <div key={id} className="wordTable--oneLine">
             <div className="wordTable--deutchWord">
@@ -12,7 +15,7 @@ const WordsTable = ({ data, onDelete }) => {
               <p>překlad</p>
             </div>
             <div className="wordTable--czechWord">
-             <p>{wordCze}</p>
+              <p>{wordCze}</p>
             </div>
             <div className="buttonsSection">
               <button
@@ -22,12 +25,15 @@ const WordsTable = ({ data, onDelete }) => {
               >
                 Smazat
               </button>
+              <button>
+                {/* <Link to={`/detail-word/${id}`}>Detail</Link> */}
+              </button>
             </div>
           </div>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default WordsTable
+export default WordsTable;
