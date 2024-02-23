@@ -13,14 +13,14 @@
         max-width: 600px ;
         margin-top: 20px;
         box-shadow: -1px -1px 5px #615D76;
-        background: linear-gradient(to bottom, #827d9c, #ffffff);
+        background: linear-gradient(to bottom, #c1c6a9, #ffe5b77d);
 
         .DetailWordTab__wall_ButtonSection {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            background: linear-gradient(to bottom, #ffffff, #827d9c, #ffffff);
+            background: linear-gradient(to bottom, #ffe5b7a2,#c1c6a990, #ffe5b79f);
             height: 350px;
 
             button {
@@ -29,7 +29,8 @@
                 align-items: center;
                 font-size: 10px;
                 flex-direction: column;
-                background-color: rgba(255, 175, 14, 0.732);
+                background-color: #262548;
+                color: white;
                 border: none;
                 width: 50px;
                 height: 50px;
@@ -46,7 +47,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background: linear-gradient(to bottom, #c9c5d8, #827d9c);
+            background: linear-gradient(to bottom, #ffe5b7c0, #c1c6a9d1);
             height: 90%;
             width: 85%;
             // border: 2px solid transparent;
@@ -64,6 +65,7 @@
 
             .DetailWordTab__wordDe {
                 font-size: 22px;
+                margin-bottom: 30px;
             }
 
             .DetailWordTab__wordCze {
