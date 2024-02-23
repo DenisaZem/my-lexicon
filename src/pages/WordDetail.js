@@ -83,9 +83,11 @@ const WordDetail = () => {
           <div className="DetailWordTab__wall">
             <div className="DetailWordTab__wall_ButtonSection">
               <button onClick={handleEdit}>Upravit</button>
-              <button>Přehrát</button>
+              <button className="ButtonSection_soundBTN">
+              <img className="ButtonSection_soundBTN_img" src="https://static-00.iconduck.com/assets.00/audio-volume-low-symbolic-icon-2048x1848-yr4qvyya.png" alt="Sound Icon" />
+              </button>
               <button>
-                <Link className="DetailWordTab__wall_ButtonSection_backBTN" to="/overview">Zpět</Link>
+                <Link className="ButtonSection_backBTN" to="/overview">Zpět</Link>
               </button>
             </div>
             {error && <p>{error}</p>}

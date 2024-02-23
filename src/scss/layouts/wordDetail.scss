@@ -62,7 +62,8 @@
              height: 350px;
 
              button,
-             .DetailWordTab__wall_ButtonSection_backBTN  {
+             .ButtonSection_backBTN,
+             .ButtonSection_soundBTN {
                  display: flex;
                  justify-content: center;
                  align-items: center;
@@ -79,6 +80,10 @@
                  font-weight: 600;
                  cursor: pointer;
                  text-decoration: none;
+             }
+             .ButtonSection_soundBTN_img {
+                width: 25px;
+                color: white;
              }
          }
 
