@@ -70,12 +70,12 @@ const WordDetail = () => {
             onChange={handleChange}
           />
           <div className="editForm__buttonSection">
-          {/* <button>
+            {/* <button>
           <Link to={`/detail-word/${wordId}`}>Zpět</Link>
               </button> */}
-          <button onClick={handleSave} className="saveBTN">
-            Uložit
-          </button>
+            <button onClick={handleSave} className="saveBTN">
+              Uložit
+            </button>
           </div>
         </div>
       ) : (
@@ -84,7 +84,9 @@ const WordDetail = () => {
             <div className="DetailWordTab__wall_ButtonSection">
               <button onClick={handleEdit}>Upravit</button>
               <button>Přehrát</button>
-              <button>Zpšt</button>
+              <button>
+                <Link className="DetailWordTab__wall_ButtonSection_backBTN" to="/overview">Zpět</Link>
+              </button>
             </div>
             {error && <p>{error}</p>}
             <div className="DetailWordTab__container">
