@@ -25,9 +25,9 @@ const WordsTable = ({ data, onDelete }) => {
               >
                 Smazat
               </button>
-              <button>
+              {/* <button>
                 <Link to={`/detail-word/${id}`}>Detail</Link>
-              </button>
+              </button> */}
             </div>
           </div>
         );
