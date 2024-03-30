@@ -70,9 +70,9 @@ const WordDetail = () => {
             onChange={handleChange}
           />
           <div className="editForm__buttonSection">
-            {/* <button>
+            <button>
           <Link to={`/detail-word/${wordId}`}>Zpět</Link>
-              </button> */}
+              </button>
             <button onClick={handleSave} className="saveBTN">
               Uložit
             </button>
