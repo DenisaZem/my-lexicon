@@ -4,7 +4,7 @@ import WordsOverview from './pages/WordsOverview'
 import Form from './components/Form'
 import WordDetail from './pages/WordDetail'
 import LayOut from './components/LayOut'
-import EditForm from './components/EditForm'
+import EditForm from './pages/EditForm'
 
 
 const App = () => {
