@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { GiCancel } from "react-icons/gi"
 
 const WordBox = ({ id, wordDe, wordCze, onDelete }) => {
   return (
@@ -14,6 +15,9 @@ const WordBox = ({ id, wordDe, wordCze, onDelete }) => {
           <p>{wordCze}</p>
         </div>
         <div className="wordBox__buttonsSection">
+          <button className="wordBox__buttonsSection--detail">
+            <Link to={`/detail-word/${id}`}>Detail</Link>
+          </button>
           <button
             type="button"
             onClick={() => onDelete(id)}
@@ -21,9 +25,7 @@ const WordBox = ({ id, wordDe, wordCze, onDelete }) => {
           >
             Smazat
           </button>
-          <button className="wordBox__buttonsSection--detail">
-            <Link to={`/detail-word/${id}`}>Detail</Link>
-          </button>
+          <GiCancel className="wordBox__buttonsSection--IMG-detail"/>
         </div>
       </div>
     </div>

@@ -38,13 +38,13 @@ const WordDetail = () => {
               />
             </button>
             <button>
-              <Link className="ButtonSection_backBTN" to="/overview">
-                Zpět
+              <Link className="ButtonSection_editBTN" to={`/edit-word/${wordId}`}>
+                Upravit
               </Link>
             </button>
             <button>
-              <Link className="ButtonSection_editBTN" to={`/edit-word/${wordId}`}>
-                Upravit
+              <Link className="ButtonSection_backBTN" to="/overview">
+                Zpět
               </Link>
             </button>
           </div>
