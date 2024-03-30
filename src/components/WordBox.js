@@ -17,11 +17,11 @@ const WordBox = ({ id, wordDe, wordCze, onDelete }) => {
           <button
             type="button"
             onClick={() => onDelete(id)}
-            className="deleteButton"
+            className="wordBox__buttonsSection--delete"
           >
             Smazat
           </button>
-          <button>
+          <button className="wordBox__buttonsSection--detail">
             <Link to={`/detail-word/${id}`}>Detail</Link>
           </button>
         </div>

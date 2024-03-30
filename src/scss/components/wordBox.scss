@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1.5fr 0.5fr 1.2fr 1fr;
     border: 2px solid rgb(168, 166, 163);
-    margin: 8px;
+    margin: 8px; 
     padding-left: 20px;
     box-shadow: $box-shadow;
     background-color: $light-violet;
@@ -42,12 +42,14 @@
         justify-content: center;
         align-items: center;
 
-        .deleteButton {
+        .wordBox__buttonsSection--delete,
+        .wordBox__buttonsSection--detail {
             background-color: $yellow;
             border: none;
             color: #fff;
             border-radius: 3px;
             padding: 5px;
+            margin: 3px;
             cursor: pointer;
             height: 70%;
             width: 60%;
@@ -60,6 +62,17 @@
                 background-color: #ff3333;
             }
         }
+
+        .wordBox__buttonsSection--detail {
+            background-color: #3634746f;
+            text-decoration: none;
+
+            a {
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+            }
+        }
+
     }
 
     @media screen and (max-width: 620px) {
@@ -67,7 +80,8 @@
         .wordBox__deutchWord,
         .wordBox__czechWord,
         .wordBox__trans,
-        .deleteButton {
+        .wordBox__buttonsSection--delete,
+        .wordBox__buttonsSection--detail {
             font-size: 11px;
         }
     }
@@ -77,7 +91,8 @@
         .wordBox__deutchWord,
         .wordBox__czechWord,
         .wordBox__trans,
-        .deleteButton {
+        .wordBox__buttonsSection--delete,
+        .wordBox__buttonsSection--detail {
             font-size: 8px;
         }
     }
@@ -89,7 +104,8 @@
             font-size: 7px;
         }
 
-        .deleteButton {
+        .wordBox__buttonsSection--delete,
+        .wordBox__buttonsSection--detail {
             font-size: 6px;
         }
     }
