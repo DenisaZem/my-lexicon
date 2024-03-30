@@ -1,3 +1,14 @@
+.container--ADDNotif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; 
+  top: 30%;
+   left: 50%; 
+  transform: translate(-50%, -90%); 
+  z-index: 999; 
+}
+
 .AddWordForm {
   width: 300px;
   margin: 50px auto;
@@ -16,6 +27,7 @@
     box-sizing: border-box;
     background-color: #c1c0c7;
     font-size: 16px;
+    outline: none;
   }
 
   .submitButton {
