@@ -1,39 +1,4 @@
-.DetailWord__editForm {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #7F7C9B;
-    border: 2px solid rgb(168, 166, 163);
-    box-shadow: -5px -5px 20px #1b1a1a;
 
-    input {
-        width: 100%;
-        margin-bottom: 10px;
-        padding: 10px;
-        border: 1px solid #dbdbdb;
-        border-radius: 4px;
-        box-sizing: border-box;
-        background-color: #c1c0c7;
-        font-size: 16px;
-    }
-
-    .editForm__buttonSection {
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .saveBTN {
-            background-color: $yellow;
-            width: 100px;
-            height: 30px;
-            border: none;
-            color: #fff;
-            border-radius: 8px;
-        }
-    }
-}
 
 .DetailWord {
     display: flex;
@@ -60,7 +25,11 @@
             background: linear-gradient(to bottom, #ffffffa2, #7F7C9B, #ffffff9f);
             height: 350px;
 
-            button,
+            button {
+                border: none;
+                background-color:transparent;
+            }
+
             .ButtonSection_backBTN,
             .ButtonSection_soundBTN,
             .ButtonSection_editBTN {
@@ -81,6 +50,12 @@
                 cursor: pointer;
                 text-decoration: none;
             }
+
+            .ButtonSection_editBTN {
+                background-color: $yellow;
+                border-radius: 30px;
+            }
+
             .ButtonSection_soundBTN_img {
                width: 25px;
                color: white;

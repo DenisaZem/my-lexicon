@@ -67,12 +67,11 @@ const EditForm = () => {
           onChange={handleChange}
         />
         <div className="editForm__buttonSection">
-          <button>
-            <Link to={`/detail-word/${wordId}`}>Zpět</Link>
-          </button>
-          <button onClick={handleSave} className="saveBTN">
-            <Link to={`/detail-word/${wordId}`}>Uložit</Link>
-          </button>
+        
+            <Link to={`/detail-word/${wordId}`} className="backBTN">Zpět</Link>
+
+            <Link to={`/detail-word/${wordId}`} onClick={handleSave} className="saveBTN">Uložit</Link>
+
         </div>
       </div>
     </section>
