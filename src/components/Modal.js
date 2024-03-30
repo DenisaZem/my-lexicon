@@ -2,13 +2,13 @@
 import { useEffect } from "react";
 
 const Modal = ({ notifContent, clearNotif }) => {
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      clearNotif();
-    }, 2000);
+  // useEffect(() => {
+  //   const timeoutId = setTimeout(() => {
+  //     clearNotif();
+  //   }, 2000);
 
-    return () => clearTimeout(timeoutId);
-  }, [clearNotif]);
+  //   return () => clearTimeout(timeoutId);
+  // }, [clearNotif]);
 
   return (
     <div className="modal-container">

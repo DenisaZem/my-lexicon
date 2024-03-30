@@ -93,7 +93,10 @@ const Form = () => {
       <div className="container--ADDNotif">
         <div className="ADDNotif">
           {state.showNotification && (
-            <Modal notifContent={state.notificationContent} clearNotif={clearNotification} />
+            <Modal
+              notifContent={state.notificationContent}
+              clearNotif={clearNotification}
+            />
           )}
         </div>
       </div>

@@ -26,21 +26,23 @@ const NavBar = () => {
   // for closing menu after click outside of NavBar--list
   useEffect(() => {
     const closeMenuOnOutsideClick = (e) => {
-      const isClickOnBackground = e.target.classList.contains("background_black");
-      const isClickOnNavBarList= e.target.classList.contains(".navBar--list show");
-  
+      const isClickOnBackground =
+        e.target.classList.contains("background_black");
+      const isClickOnNavBarList =
+        e.target.classList.contains("ul.navBar--list show");
+        
+
       if (showMenu && isClickOnBackground && !isClickOnNavBarList) {
         setShowMenu(false);
       }
     };
 
     document.addEventListener("click", closeMenuOnOutsideClick);
-  
+
     return () => {
       document.removeEventListener("click", closeMenuOnOutsideClick);
     };
   }, [showMenu]);
-  
 
   // for closing menu after width window change
   useEffect(() => {
@@ -75,16 +77,15 @@ const NavBar = () => {
           <GiHamburgerMenu className="menu-icon" onClick={toggleMenu} />
         )}
         <ul
-          onClick={closeMenu}
           className={`navBar--list ${showMenu ? "show" : ""}`}
         >
-          <li>
+          <li onClick={closeMenu}>
             <Link to="/">Úvod</Link>
           </li>
-          <li>
+          <li onClick={closeMenu}>
             <Link to="/overview">Přehled slov</Link>
           </li>
-          <li>
+          <li onClick={closeMenu}>
             <Link to="/form">Formulář</Link>
           </li>
         </ul>
