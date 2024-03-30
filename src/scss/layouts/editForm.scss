@@ -37,6 +37,11 @@
             color: #fff;
             border-radius: 8px;
             text-decoration: none;
+            transition: transform 0.1s;
+
+            &:hover {
+             transform: scale(1.1) ;
+         }
         }
 
         .backBTN {
