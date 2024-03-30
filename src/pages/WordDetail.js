@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { projectFirestore } from "../firebase/config";
+import WordSound from "../components/WordSound";
 
 const WordDetail = () => {
   const [data, setData] = useState({});
   const [error, setError] = useState("");
-  // const [isEditing, setIsEditing] = useState(false);
   const { wordId } = useParams();
 
   useEffect(() => {
@@ -30,13 +30,8 @@ const WordDetail = () => {
       <section className="DetailWord">
         <div className="DetailWordTab__wall">
           <div className="DetailWordTab__wall_ButtonSection">
-            <button className="ButtonSection_soundBTN">
-              <img
-                className="ButtonSection_soundBTN_img"
-                src="https://static-00.iconduck.com/assets.00/audio-volume-low-symbolic-icon-2048x1848-yr4qvyya.png"
-                alt="Sound Icon"
-              />
-            </button>
+          <WordSound wordDe={data.wordDe} /> 
+          
             <button>
               <Link className="ButtonSection_editBTN" to={`/edit-word/${wordId}`}>
                 Upravit
