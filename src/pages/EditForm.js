@@ -71,7 +71,7 @@ const EditForm = () => {
             <Link to={`/detail-word/${wordId}`}>Zpět</Link>
           </button>
           <button onClick={handleSave} className="saveBTN">
-            Uložit
+            <Link to={`/detail-word/${wordId}`}>Uložit</Link>
           </button>
         </div>
       </div>
