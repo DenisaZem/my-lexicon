@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { projectFirestore } from "../firebase/config";
 
@@ -8,8 +8,26 @@ const EditForm = () => {
   const [data, setData] = useState({
     wordDe: "",
     wordCze: "",
-    sentence: ""
+    sentence: "",
   });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const document = await projectFirestore
+          .collection("deutsch")
+          .doc(wordId)
+          .get();
+        if (document.exists) {
+          setData(document.data());
+        }
+      } catch (err) {
+        console.error(err.message);
+      }
+    };
+
+    fetchData();
+  }, [wordId]);
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -20,9 +38,8 @@ const EditForm = () => {
       await projectFirestore.collection("deutsch").doc(wordId).update({
         wordDe: data.wordDe,
         wordCze: data.wordCze,
-        sentence: data.sentence
+        sentence: data.sentence,
       });
-
     } catch (err) {
       console.error(err.message);
     }
