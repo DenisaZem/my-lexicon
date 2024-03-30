@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { projectFirestore } from "../firebase/config";
+import EditForm from "../components/EditForm";
 
 const WordDetail = () => {
   const [data, setData] = useState({});
   const [error, setError] = useState("");
-  const [isEditing, setIsEditing] = useState(false);
+  // const [isEditing, setIsEditing] = useState(false);
   const { wordId } = useParams();
 
   useEffect(() => {
@@ -25,31 +26,31 @@ const WordDetail = () => {
       });
   }, [wordId]);
 
-  const handleEdit = () => {
-    setIsEditing(true);
-  };
+  // const handleEdit = () => {
+  //   setIsEditing(true);
+  // };
 
-  const handleSave = async () => {
-    try {
-      await projectFirestore.collection("deutsch").doc(wordId).update({
-        wordDe: data.wordDe,
-        wordCze: data.wordCze,
-        sentence: data.sentence,
-      });
+  // const handleSave = async () => {
+  //   try {
+  //     await projectFirestore.collection("deutsch").doc(wordId).update({
+  //       wordDe: data.wordDe,
+  //       wordCze: data.wordCze,
+  //       sentence: data.sentence,
+  //     });
 
-      setIsEditing(false);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
+  //     setIsEditing(false);
+  //   } catch (err) {
+  //     console.error(err.message);
+  //   }
+  // };
 
-  const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (e) => {
+  //   setData({ ...data, [e.target.name]: e.target.value });
+  // };
 
   return (
     <div className="MainDetailWordPage">
-      {isEditing ? (
+      {/* {isEditing ? (
         <div className="DetailWord__editForm">
           <input
             type="text"
@@ -78,7 +79,7 @@ const WordDetail = () => {
             </button>
           </div>
         </div>
-      ) : (
+      ) : ( */}
         <section className="DetailWord">
           <div className="DetailWordTab__wall">
             <div className="DetailWordTab__wall_ButtonSection">
@@ -107,7 +108,7 @@ const WordDetail = () => {
             </div>
           </div>
         </section>
-      )}
+      
     </div>
   );
 };
