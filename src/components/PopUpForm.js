@@ -4,7 +4,7 @@ import { GiCancel } from "react-icons/gi"
 const PopUpForm = (props) => {
     return (props.trigger) ? (
       <div className="popup">
-          <div className="popup--inner">
+          <div className="popup__inner">
               <button className="close-btn" onClick={()=> props.setTrigger(false)}><GiCancel/></button>
               <Form/>
               {props.children}
