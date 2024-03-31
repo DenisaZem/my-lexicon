@@ -89,15 +89,17 @@ const NavBar = () => {
           {/* <li onClick={closeMenu}>
             <Link to="/form">Formulář</Link>
           </li> */}
+          <div className="navBar__Pop">
            <button
-              className="navBar__PopContainer"
+              className="Pop__Container"
               onClick={() => setButtonPopUp(true)}
             >
-              <div className="Pop--title">
+              <div className="Pop__Container--title">
                 Přidat slovo
               </div>
-              <div className="Pop--btn"></div>
+              <div className="Pop__Container--cross"></div>
             </button>
+          </div>
         </ul>
       </nav>
     </div>
