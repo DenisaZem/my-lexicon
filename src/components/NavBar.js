@@ -4,6 +4,7 @@ import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [buttonPopUp, setButtonPopUp] = useState(false)
 
   // for not scrolling window
   useEffect(() => {
@@ -85,9 +86,18 @@ const NavBar = () => {
           <li onClick={closeMenu}>
             <Link to="/overview">Přehled slov</Link>
           </li>
-          <li onClick={closeMenu}>
+          {/* <li onClick={closeMenu}>
             <Link to="/form">Formulář</Link>
-          </li>
+          </li> */}
+           <button
+              className="navBar__PopContainer"
+              onClick={() => setButtonPopUp(true)}
+            >
+              <div className="Pop--title">
+                Přidat slovo
+              </div>
+              <div className="Pop--btn"></div>
+            </button>
         </ul>
       </nav>
     </div>
