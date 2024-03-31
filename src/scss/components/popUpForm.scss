@@ -14,21 +14,25 @@
         padding: 32px;
         width: 100%;
         max-width: 640px;
-        background-color: #262548e6;
+        background-color: #26254800;
 
         .close-btn {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
             color: rgb(255, 175, 14);
             border: none;
             background-color: transparent;
-            font-size: 40px;
+            font-size: 50px;
             z-index: 100;
             position: absolute;
-            top: 20px;
-            right: 30px;
+            bottom: 20px;
+            right:20%;
             transition: transform 0.5s ease;
+
+            &:hover {
+                transform: scale(1.2) rotate(90deg);
+              }
         }
     }
 }
