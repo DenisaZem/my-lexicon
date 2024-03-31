@@ -4,6 +4,7 @@ import WordsOverview from './pages/WordsOverview'
 import Form from './components/Form'
 import WordDetail from './pages/WordDetail'
 import LayOut from './components/LayOut'
+import EditForm from './pages/EditForm'
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="overview" element={<WordsOverview />} />
           <Route path="form" element={<Form />} />
           <Route path="detail-word/:wordId" element={<WordDetail />} />
+          <Route path="edit-word/:wordId" element={<EditForm />} />
       </Route>
       </Routes>
     </BrowserRouter>

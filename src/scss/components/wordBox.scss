@@ -2,13 +2,16 @@
     display: grid;
     grid-template-columns: 1.5fr 0.5fr 1.2fr 1fr;
     border: 2px solid rgb(168, 166, 163);
-    margin: 8px;
+    margin: 8px; 
     padding-left: 20px;
     box-shadow: $box-shadow;
     background-color: $light-violet;
 
     .wordBox__deutchWord,
     .wordBox__czechWord {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 1px solid rgb(168, 166, 163);
         width: auto;
         overflow: hidden;
@@ -42,15 +45,17 @@
         justify-content: center;
         align-items: center;
 
-        .deleteButton {
-            background-color: $yellow;
+        .wordBox__buttonsSection--delete,
+        .wordBox__buttonsSection--detail {
+            background-color:#3634746f;
             border: none;
             color: #fff;
             border-radius: 3px;
             padding: 5px;
+            margin: 3px;
             cursor: pointer;
             height: 70%;
-            width: 60%;
+            width: 50%;
             max-width: 100px;
             display: flex;
             justify-content: center;
@@ -60,6 +65,52 @@
                 background-color: #ff3333;
             }
         }
+
+        .wordBox__buttonsSection--delete {
+            @media screen and (max-width: 620px) {
+                display:none;
+            }
+        }
+
+        .wordBox__buttonsSection--detail {
+            background-color:$yellow;
+            text-decoration: none;
+            min-width: 55px;
+
+            a {
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+            }
+
+            &:hover {
+                background-color: rgb(245, 195, 96);
+            }
+
+            @media screen and (max-width: 480px) {
+                min-width: 25px;
+            }
+        }
+
+        .wordBox__buttonsSection--IMG-detail {
+            display: none; 
+        }
+        
+        @media screen and (max-width: 620px) {
+            .wordBox__buttonsSection--IMG-detail {
+                display: block; /* Zobrazte ikonu pod šířkou 620px */
+                width: 20%;
+                min-width: 20px;
+                height: auto;
+                opacity: 10;
+                color: rgb(234, 214, 214);
+                margin: 3%;
+        
+                &:hover {
+                    color: #ff3333;
+                }
+            }
+        }
+
     }
 
     @media screen and (max-width: 620px) {
@@ -67,7 +118,7 @@
         .wordBox__deutchWord,
         .wordBox__czechWord,
         .wordBox__trans,
-        .deleteButton {
+        .wordBox__buttonsSection--detail {
             font-size: 11px;
         }
     }
@@ -77,8 +128,12 @@
         .wordBox__deutchWord,
         .wordBox__czechWord,
         .wordBox__trans,
-        .deleteButton {
+        .wordBox__buttonsSection--detail {
             font-size: 8px;
+        }
+
+        .wordBox__buttonsSection--detail {
+           width: 10%;
         }
     }
 
@@ -87,10 +142,6 @@
         .wordBox__deutchWord,
         .wordBox__czechWord {
             font-size: 7px;
-        }
-
-        .deleteButton {
-            font-size: 6px;
         }
     }
 }

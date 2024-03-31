@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import { GiCancel } from "react-icons/gi"
 
 const WordBox = ({ id, wordDe, wordCze, onDelete }) => {
+  const handleDelete = (id) => {
+    const confirmed = window.confirm("Jste si jisti, že chcete smazat toto slovo? Slovo se nenávratně smaže.");
+    if (confirmed) {
+      onDelete(id);
+    }
+  };
+
   return (
     <div>
       <div key={id} className="wordBox">
@@ -14,16 +22,17 @@ const WordBox = ({ id, wordDe, wordCze, onDelete }) => {
           <p>{wordCze}</p>
         </div>
         <div className="wordBox__buttonsSection">
+          <button className="wordBox__buttonsSection--detail">
+            <Link to={`/detail-word/${id}`}>Detail</Link>
+          </button>
           <button
             type="button"
-            onClick={() => onDelete(id)}
-            className="deleteButton"
+            onClick={() => handleDelete(id)}
+            className="wordBox__buttonsSection--delete"
           >
             Smazat
           </button>
-          <button>
-            <Link to={`/detail-word/${id}`}>Detail</Link>
-          </button>
+          <GiCancel className="wordBox__buttonsSection--IMG-detail" onClick={() => handleDelete(id)}/>
         </div>
       </div>
     </div>

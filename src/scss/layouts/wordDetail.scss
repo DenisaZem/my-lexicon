@@ -1,40 +1,3 @@
-.DetailWord__editForm {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #7F7C9B;
-    border: 2px solid rgb(168, 166, 163);
-    box-shadow: -5px -5px 20px #1b1a1a;
-
-    input {
-        width: 100%;
-        margin-bottom: 10px;
-        padding: 10px;
-        border: 1px solid #dbdbdb;
-        border-radius: 4px;
-        box-sizing: border-box;
-        background-color: #c1c0c7;
-        font-size: 16px;
-    }
-
-    .editForm__buttonSection {
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .saveBTN {
-            background-color: $yellow;
-            width: 100px;
-            height: 30px;
-            border: none;
-            color: #fff;
-            border-radius: 8px;
-        }
-    }
-}
-
 .DetailWord {
     display: flex;
     justify-content: center;
@@ -43,26 +6,32 @@
 
     .DetailWordTab__wall {
         display: flex;
-        justify-content: flex-end;
+        // justify-content: flex-end;
         // align-items: center;
         height: 350px;
         width: 60%;
         max-width: 600px;
         margin-top: 20px;
-        box-shadow: -1px -1px 5px #615D76;
-        background: linear-gradient(to bottom, #aba8c1, #7F7C9B);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.837), #d7d6dd94,);
+        // box-shadow: -1px -1px 5px #615D76;
+        // background: linear-gradient(to bottom, rgba(255, 175, 14, 0.837), #dfdee794,);
 
         .DetailWordTab__wall_ButtonSection {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            background: linear-gradient(to bottom, #ffffffa2, #7F7C9B, #ffffff9f);
+            // background: linear-gradient(to bottom, #f9f9f9a2, rgba(14, 12, 9, 0.274), rgba(255, 175, 14, 0.677));
             height: 350px;
 
-            button,
+            button {
+                border: none;
+                background-color:transparent;
+            }
+
             .ButtonSection_backBTN,
-            .ButtonSection_soundBTN {
+            .ButtonSection_soundBTN,
+            .ButtonSection_editBTN {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -78,12 +47,36 @@
                 font-family: Helvetica;
                 font-weight: 600;
                 cursor: pointer;
-                text-decoration: none;
+                text-decoration: none; 
+                transition: transform 0.3s;
+
+                &:hover {
+                 transform: scale(1.1) ;
+             }
             }
+
+            .ButtonSection_editBTN {
+                background-color: rgba(255, 175, 14, 0.875);
+                border-radius: 30px; 
+            }
+
             .ButtonSection_soundBTN_img {
-               width: 25px;
+               width: 32px;
                color: white;
+               transition: transform 0.3s;
+
+               &:hover {
+                transform: scale(1.3) ;
             }
+            }
+
+            .nevim{
+                width: 20px;
+                height: 20px;
+                background-color: salmon;
+            }
+
+        
         }
 
         .DetailWordTab__container {
@@ -91,12 +84,13 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background: linear-gradient(to bottom, #7F7C9B, #ffffffd1);
-            height: 90%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.837), #d7d6dd4e,);
+            // background: linear-gradient(to bottom, rgba(255, 175, 14, 0.677), rgba(255, 175, 14, 0.026));
+            height: 70%;
             width: 85%;
             // border: 2px solid transparent;
             // box-shadow: -3px -3px 5px #615D76;
-            margin-top: 70px;
+            margin-top: 85px;
             padding: 10px;
             overflow: hidden;
 
