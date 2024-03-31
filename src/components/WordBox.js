@@ -3,7 +3,7 @@ import { GiCancel } from "react-icons/gi"
 
 const WordBox = ({ id, wordDe, wordCze, onDelete }) => {
   const handleDelete = (id) => {
-    const confirmed = window.confirm("Jste si jisti, že chcete smazat toto slovo?");
+    const confirmed = window.confirm("Jste si jisti, že chcete smazat toto slovo? Slovo se nenávratně smaže.");
     if (confirmed) {
       onDelete(id);
     }
@@ -32,7 +32,7 @@ const WordBox = ({ id, wordDe, wordCze, onDelete }) => {
           >
             Smazat
           </button>
-          <GiCancel className="wordBox__buttonsSection--IMG-detail"/>
+          <GiCancel className="wordBox__buttonsSection--IMG-detail" onClick={() => handleDelete(id)}/>
         </div>
       </div>
     </div>
