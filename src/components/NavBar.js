@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
+import PopUpForm from "./PopUpForm";
+import { Form } from "react-router-dom"
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -60,6 +62,7 @@ const NavBar = () => {
   // for show .backround
   const isOpen = showMenu ? "open" : "";
 
+
   return (
     <div>
       <div className={`background_black ${isOpen}`}></div>
@@ -99,6 +102,7 @@ const NavBar = () => {
               </div>
               <div className="Pop__Container--cross"></div>
             </button>
+            <PopUpForm trigger={buttonPopUp} setTrigger={setButtonPopUp} />
           </div>
         </ul>
       </nav>
