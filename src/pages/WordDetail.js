@@ -25,15 +25,17 @@ const WordDetail = () => {
       });
   }, [wordId]);
 
-  return  (
+  return (
     <div className="MainDetailWordPage">
       <section className="DetailWord">
         <div className="DetailWordTab__wall">
           <div className="DetailWordTab__wall_ButtonSection">
-          <WordSound wordDe={data.wordDe} /> 
-          
+            <WordSound wordDe={data.wordDe} />
             <button>
-              <Link className="ButtonSection_editBTN" to={`/edit-word/${wordId}`}>
+              <Link
+                className="ButtonSection_editBTN"
+                to={`/edit-word/${wordId}`}
+              >
                 Upravit
               </Link>
             </button>
