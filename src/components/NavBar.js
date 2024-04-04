@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
+import PopUpForm from "./PopUpForm";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [buttonPopUp, setButtonPopUp] = useState(false);
 
   // for not scrolling window
   useEffect(() => {
@@ -28,9 +30,9 @@ const NavBar = () => {
     const closeMenuOnOutsideClick = (e) => {
       const isClickOnBackground =
         e.target.classList.contains("background_black");
-      const isClickOnNavBarList =
-        e.target.classList.contains("ul.navBar--list show");
-        
+      const isClickOnNavBarList = e.target.classList.contains(
+        "ul.navBar--list show"
+      );
 
       if (showMenu && isClickOnBackground && !isClickOnNavBarList) {
         setShowMenu(false);
@@ -76,18 +78,23 @@ const NavBar = () => {
         ) : (
           <GiHamburgerMenu className="menu-icon" onClick={toggleMenu} />
         )}
-        <ul
-          className={`navBar--list ${showMenu ? "show" : ""}`}
-        >
+        <ul className={`navBar--list ${showMenu ? "show" : ""}`}>
           <li onClick={closeMenu}>
             <Link to="/">Úvod</Link>
           </li>
           <li onClick={closeMenu}>
             <Link to="/overview">Přehled slov</Link>
           </li>
-          <li onClick={closeMenu}>
-            <Link to="/form">Formulář</Link>
-          </li>
+          <div className="navBar__Pop">
+            <button
+              className="Pop__Container"
+              onClick={() => setButtonPopUp(true)}
+            >
+              <div className="Pop__Container--title">Přidat slovo</div>
+              <div className="Pop__Container--cross"></div>
+            </button>
+            <PopUpForm trigger={buttonPopUp} setTrigger={setButtonPopUp} />
+          </div>
         </ul>
       </nav>
     </div>

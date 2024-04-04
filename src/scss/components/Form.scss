@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed; 
+  position: fixed;
   top: 30%;
-   left: 50%; 
-  transform: translate(-50%, -90%); 
-  z-index: 999; 
+  left: 50%;
+  transform: translate(-50%, -90%);
+  z-index: 999;
 }
 
 .AddWordForm {
@@ -35,5 +35,6 @@
     border: none;
     color: #fff;
     border-radius: 8px;
+    cursor: pointer;
   }
 }
