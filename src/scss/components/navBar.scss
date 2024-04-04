@@ -61,8 +61,7 @@ body.active-modal {
 
     &--list {
         display: flex;
-        justify-content:space-around
-        ;
+        justify-content: space-around;
         align-items: center;
         list-style: none;
         width: 50%;
@@ -76,7 +75,7 @@ body.active-modal {
                 text-decoration: none;
 
                 &:hover {
-                    color: #4a456f;
+                    color: #212040;
                     font-weight: 500;
                 }
             }
@@ -126,10 +125,13 @@ body.active-modal {
 
             &:hover+.Pop__Container--cross:before {
                 transform: translate(-50%, -50%) rotate(90deg);
+                background-color: #212040;
+
             }
 
             &:hover+.Pop__Container--cross:after {
                 transform: translate(-50%, -50%) rotate(0deg);
+                background-color: #212040;
             }
         }
 
@@ -144,16 +146,18 @@ body.active-modal {
                 content: "";
                 position: absolute;
                 box-sizing: border-box;
-                background-color:  #551A8B;
+                background-color: #551A8B;
                 width: 100%;
                 height: 3px;
-                transition: transform 0.6s ease;
+                transition: transform 0.4s ease;
                 transform: translate(-50%, -50%);
             }
 
             &:after {
                 transform: translate(-50%, -50%) rotate(-90deg);
             }
+
+
             // &:hover {
             //     &:before {
             //         transform: translate(-50%, -50%) rotate(90deg); // Změna rotace pro &:before
@@ -220,6 +224,15 @@ body.active-modal {
                 a {
                     text-decoration: none;
                 }
+            }
+
+            .Pop__Container {
+
+                transition: transform 0.3s ease;
+                &:hover {
+                    transform: scale(1.3);
+                }
+
             }
         }
     }
