@@ -156,17 +156,6 @@ body.active-modal {
             &:after {
                 transform: translate(-50%, -50%) rotate(-90deg);
             }
-
-
-            // &:hover {
-            //     &:before {
-            //         transform: translate(-50%, -50%) rotate(90deg); // Změna rotace pro &:before
-            //     }
-
-            //     &:after {
-            //         transform: translate(-50%, -50%) rotate(0deg); // Změna rotace pro &:after
-            //     }
-            // }
         }
     }
 
@@ -227,8 +216,8 @@ body.active-modal {
             }
 
             .Pop__Container {
-
                 transition: transform 0.3s ease;
+
                 &:hover {
                     transform: scale(1.3);
                 }

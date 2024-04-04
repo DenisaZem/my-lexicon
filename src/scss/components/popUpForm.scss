@@ -17,9 +17,6 @@
         background-color: #26254800;
 
         .close-btn {
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
             color: rgb(255, 175, 14);
             border: none;
             background-color: transparent;
@@ -27,12 +24,12 @@
             z-index: 100;
             position: absolute;
             bottom: 20px;
-            right:20%;
+            right: 20%;
             transition: transform 0.5s ease;
 
             &:hover {
                 transform: scale(1.2) rotate(90deg);
-              }
+            }
         }
     }
 }
