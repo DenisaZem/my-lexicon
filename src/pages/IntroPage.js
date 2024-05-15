@@ -24,7 +24,7 @@ const IntroPage = () => {
       <div className="mainWall__title_3">
         <p>
           A jak to funguje? 
-          <br />
+          <br /> 
           K dispozici Ti je databáze slovíček, která si
           ukládáš dle toho, jak se je učíš ve škole, v práci nebo na ně natrefíš
           kdekoliv jinde. A nebo se uč dle předem vytvořených lekcí, je to jen

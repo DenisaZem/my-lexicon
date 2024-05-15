@@ -1,40 +1,40 @@
-import { useState, useReducer, useEffect } from "react";
-import { projectFirestore } from "../firebase/config";
-import Modal from "./Modal";
+import { useState, useReducer, useEffect } from 'react';
+import { projectFirestore } from '../firebase/config';
+import Modal from './Modal';
 
 const Form = () => {
-  const [wordDe, setWordDe] = useState("");
-  const [wordCze, setWordCze] = useState("");
-  const [sentence, setSentence] = useState("");
+  const [wordDe, setWordDe] = useState('');
+  const [wordCze, setWordCze] = useState('');
+  const [sentence, setSentence] = useState('');
 
   const reducer = (state, action) => {
     switch (action.type) {
-      case "ADD_WORD":
+      case 'ADD_WORD':
         return {
           ...state,
           wordDe: [...state.wordDe, action.payload],
-          wordCze: "",
-          sentence: "",
+          wordCze: '',
+          sentence: '',
           showNotification: true,
-          notificationContent: "Slovo bylo přidáno",
+          notificationContent: 'Slovo bylo přidáno',
         };
 
-      case "NO_WORD_ADDED":
+      case 'NO_WORD_ADDED':
         return {
           ...state,
           showNotification: true,
-          notificationContent: "Vyplňte prosím všechny údaje",
+          notificationContent: 'Vyplňte prosím všechny údaje',
         };
 
-      case "CLEAR_NOTIFICATION":
+      case 'CLEAR_NOTIFICATION':
         return {
           ...state,
           showNotification: false,
-          notificationContent: "",
+          notificationContent: '',
         };
 
       default:
-        throw new Error("Chyba - žádná shoda s action.type");
+        throw new Error('Chyba - žádná shoda s action.type');
     }
   };
 
@@ -43,7 +43,7 @@ const Form = () => {
     wordCze: [],
     sentence: [],
     showNotification: false,
-    notificationContent: "",
+    notificationContent: '',
   };
 
   const [state, dispatch] = useReducer(reducer, defaultState);
@@ -52,7 +52,7 @@ const Form = () => {
     e.preventDefault();
 
     if (!wordDe || !wordCze || !sentence) {
-      dispatch({ type: "NO_WORD_ADDED" });
+      dispatch({ type: 'NO_WORD_ADDED' });
       return;
     }
 
@@ -64,18 +64,18 @@ const Form = () => {
     };
 
     try {
-      await projectFirestore.collection("deutsch").add(newWord);
-      dispatch({ type: "ADD_WORD", payload: newWord });
-      setWordDe("");
-      setWordCze("");
-      setSentence("");
+      await projectFirestore.collection('deutsch').add(newWord);
+      dispatch({ type: 'ADD_WORD', payload: newWord });
+      setWordDe('');
+      setWordCze('');
+      setSentence('');
     } catch (err) {
       console.log(err.message);
     }
   };
 
   const clearNotification = () => {
-    dispatch({ type: "CLEAR_NOTIFICATION" });
+    dispatch({ type: 'CLEAR_NOTIFICATION' });
   };
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const Form = () => {
 
       return () => clearTimeout(timeoutId);
     }
-  }, [state.showNotification, clearNotification]);
+  }, [state.showNotification]);
 
   return (
     <div>
@@ -115,7 +115,7 @@ const Form = () => {
           value={wordCze}
         />
         <br />
-        <input
+        <input 
           type="text"
           placeholder="pomocná věta"
           onChange={(e) => setSentence(e.target.value)}
