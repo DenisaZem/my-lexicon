@@ -107,21 +107,18 @@ const Form = () => {
           onChange={(e) => setWordDe(e.target.value)}
           value={wordDe}
         />
-        <br />
         <input
           type="text"
           placeholder="český překlad"
           onChange={(e) => setWordCze(e.target.value)}
           value={wordCze}
         />
-        <br />
-        <input 
+        <input
           type="text"
           placeholder="pomocná věta"
           onChange={(e) => setSentence(e.target.value)}
           value={sentence}
         />
-        <br />
         <input type="submit" value="Přidat" className="submitButton" />
       </form>
     </div>
