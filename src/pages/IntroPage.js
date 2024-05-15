@@ -34,18 +34,6 @@ const IntroPage = () => {
           v paměti zůstane.
         </p>
       </div>
-      <div className="mainWall__title_4">
-        <p>
-        "Každý den je příležitost naučit se něco nového. Získejte sílu slov a
-          zapamatujte si je s lehkostí."
-        </p>
-      </div>
-      <div className="mainWall__title_5">
-        <p>
-          "Každý den je příležitost naučit se něco nového. Získejte sílu slov a
-          zapamatujte si je s lehkostí."
-        </p>
-      </div>
     </div>
   );
 };
