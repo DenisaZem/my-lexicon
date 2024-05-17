@@ -4,7 +4,7 @@ import Footer from "./Footer"
 
 const LayOut = () => {
     return <>
-      <NavBar />
+      <NavBar /> 
       <Outlet />
       <Footer />
     </>
