@@ -49,7 +49,7 @@ const WordsOverview = () => {
       )
     }
     setData([...sortedData])
-  }, [sortBy])
+  }, [sortBy, data])
 
   const deleteWord = (id) => {
     projectFirestore.collection("deutsch").doc(id).delete()
